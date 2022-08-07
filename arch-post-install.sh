@@ -73,7 +73,8 @@ echo -e "\nInstalando fonte Inter\n"
 
 sudo pacman -S inter-font --noconfirm
 
-echo -e "\nVá para o app de aparência e defina o tema de ícones kora light\n"
+clear
 
-echo -e "\nVá para o app de aparência e defina o tema de ícones kora light\n"
+echo -e "\nInstalando painel Plank\n"
 
+sudo pacman -S plank --noconfirm
