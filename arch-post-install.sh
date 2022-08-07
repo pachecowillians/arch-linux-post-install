@@ -78,3 +78,27 @@ clear
 echo -e "\nInstalando painel Plank\n"
 
 sudo pacman -S plank --noconfirm
+
+clear
+
+echo -e "\nInstalando yay\n"
+
+echo -e "\nInstalando go\n"
+
+sudo pacman -S go base-devel --noconfirm
+
+sudo rm -r yay
+
+echo -e "\nClonando repositório\n"
+
+git clone https://aur.archlinux.org/yay.git
+
+cd yay
+
+makepkg -si --noconfirm
+
+cd ../
+
+sudo rm -r yay
+
+sudo pacman -Rns go --noconfirm
