@@ -2,24 +2,38 @@
 
 clear
 
-echo -e "\nATUALIZANDO O SISTEMA\n"
+echo -e "\nAtualizando o sistema\n"
 
 sudo pacman -Syyu
 
 clear
 
-echo -e "\nINSTALANDO O GIT\n"
+echo -e "\nInstalando Git\n"
 
 sudo pacman -S git --noconfirm
 
 clear
 
-echo -e "\nBAIXANDO O PACOTE DE ÍCONES KORA\n"
+echo -e "\nPacote de ícones Kora\n"
 
-sudo rm -r kora
+echo -e "\nClonando repositório\n"
 
 git clone https://github.com/bikass/kora.git
 
 cd kora
 
-ls
+clear
+
+echo -e "\nSalvando arquivos no diretório /icons/\n"
+
+sudo rm -r $HOME/.local/share/icons/
+
+mkdir $HOME/.local/share/icons/
+
+mv *kora* $HOME/.local/share/icons/
+
+ls $HOME/.local/share/icons/
+
+cd ../
+
+sudo rm -r kora
