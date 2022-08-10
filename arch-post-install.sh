@@ -14,15 +14,13 @@ sudo pacman -S git zip unzip tar --noconfirm
 
 clear
 
-echo -e "\nPacote de ícones Kora\n"
+echo -e "\nPacote de ícones Papirus\n"
 
 echo -e "\nClonando repositório\n"
 
-git clone https://github.com/bikass/kora.git
+git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
 
-cd kora
-
-clear
+cd papirus-icon-theme
 
 echo -e "\nSalvando arquivos no diretório /icons/\n"
 
@@ -30,13 +28,13 @@ sudo rm -r $HOME/.local/share/icons/
 
 mkdir $HOME/.local/share/icons/
 
-mv *kora* $HOME/.local/share/icons/
+mv *Papirus* $HOME/.local/share/icons/
 
 ls $HOME/.local/share/icons/
 
 cd ../
 
-sudo rm -r kora
+sudo rm -r papirus-icon-theme
 
 clear
 
