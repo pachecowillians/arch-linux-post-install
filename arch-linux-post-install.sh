@@ -140,11 +140,11 @@
 
 
 
-clear
+# clear
 
-echo -e "\nInstalando pacotes utilizados\n"
+# echo -e "\nInstalando pacotes utilizados\n"
 
-sudo pacman -S discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
+# sudo pacman -S discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
 
 
 
@@ -156,8 +156,30 @@ sudo pacman -S discord docker docker-compose firefox gamemode gcc gcc-fortran gi
 
 # echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PKGNAME
 
-
 # yay -S google-chrome insomnia-bin beekeeper-studio-bin masterpdfeditor-free notion-app onlyoffice-bin ttf-ms-fonts visual-studio-code-bin microsoft-edge
+
+
+
+
+
+
+clear
+
+echo -e "\nInstalando Steam\n"
+
+echo -e "\nEditando /etc/pacman.conf\n"
+
+sudo sed -i 's/#\[multilib\]/[multilib]/g' /etc/pacman.conf
+sudo sed -i 's/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
+
+echo -e "\nAtualizando lista de pacotes\n"
+
+sudo pacman -Sy
+
+echo -e "\nInstalando Steam\n"
+
+sudo pacman -S steam --noconfirm
+
 
 # steam
 
