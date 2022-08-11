@@ -72,41 +72,41 @@
 
 
 
-# clear
+clear
 
-# echo -e "\nTema Orchis\n"
+echo -e "\nTema Orchis\n"
 
-# sudo rm -r Orchis-theme
+sudo rm -r Orchis-theme
 
-# git clone https://github.com/vinceliuice/Orchis-theme.git
+git clone https://github.com/vinceliuice/Orchis-theme.git
 
-# clear
+clear
 
-# echo -e "\nInstalando Git\n"
+echo -e "\nInstalando Git\n"
 
-# sudo pacman -S tar --noconfirm
+sudo pacman -S tar --noconfirm
 
-# clear
+clear
 
-# echo -e "\nSalvando arquivos no diretório /themes/\n"
+echo -e "\nSalvando arquivos no diretório /themes/\n"
 
-# ls
+ls
 
-# cd Orchis-theme/release/
+cd Orchis-theme/release/
 
-# sudo rm -r $HOME/.local/share/themes/
+sudo rm -r $HOME/.local/share/themes/
 
-# mkdir $HOME/.local/share/themes/
+mkdir $HOME/.local/share/themes/
 
-# tar -xf Orchis.tar.xz -C $HOME/.local/share/themes/
+tar -xf Orchis.tar.xz -C $HOME/.local/share/themes/
 
-# ls $HOME/.local/share/themes/
+ls $HOME/.local/share/themes/
 
-# cd ../../
+cd ../../
 
-# sudo rm -r Orchis-theme
+sudo rm -r Orchis-theme
 
-
+xfconf-query -c xsettings -p /Net/ThemeName -s "Orchis-Dark"
 
 
 # clear
@@ -184,62 +184,62 @@
 
 
 
-echo -e "\nInstalando Zsh\n"
+# echo -e "\nInstalando Zsh\n"
 
-sudo pacman -S zsh zsh-completions --noconfirm
+# sudo pacman -S zsh zsh-completions --noconfirm
 
-echo -e "\nInstalando Oh My Zsh\n"
+# echo -e "\nInstalando Oh My Zsh\n"
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo -e "\nInstalando tema Spaceship\n"
+# echo -e "\nInstalando tema Spaceship\n"
 
-sudo rm -r $ZSH_CUSTOM/themes/spaceship-prompt
+# sudo rm -r $ZSH_CUSTOM/themes/spaceship-prompt
 
-sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+# sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
-echo -e "\nCriando link simbólico para pasta do Spaceship\n"
+# echo -e "\nCriando link simbólico para pasta do Spaceship\n"
 
-sudo rm -r $ZSH_CUSTOM/themes/spaceship.zsh-theme
+# sudo rm -r $ZSH_CUSTOM/themes/spaceship.zsh-theme
 
-sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
-echo -e "\nAplicando tema Spaceship\n"
+# echo -e "\nAplicando tema Spaceship\n"
 
-sudo sed -i 's/ZSH_THEME=.*/ZSH_THEME="spaceship"/g' ~/.zshrc
+# sudo sed -i 's/ZSH_THEME=.*/ZSH_THEME="spaceship"/g' ~/.zshrc
 
-echo -e "\nConfigurando o Spaceship\n"
+# echo -e "\nConfigurando o Spaceship\n"
 
-echo 'SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
+# echo 'SPACESHIP_PROMPT_ORDER=(
+#   user          # Username section
+#   dir           # Current directory section
+#   host          # Hostname section
+#   git           # Git section (git_branch + git_status)
+#   hg            # Mercurial section (hg_branch  + hg_status)
+#   exec_time     # Execution time
+#   line_sep      # Line break
+#   vi_mode       # Vi-mode indicator
+#   jobs          # Background jobs indicator
+#   exit_code     # Exit code section
+#   char          # Prompt character
+# )
+# SPACESHIP_USER_SHOW=always
+# SPACESHIP_PROMPT_ADD_NEWLINE=false
+# SPACESHIP_CHAR_SYMBOL="❯"
+# SPACESHIP_CHAR_SUFFIX=" "' >> ~/.zshrc
 
-echo -e "\nPlugins do Zsh\n"
+# echo -e "\nPlugins do Zsh\n"
 
-echo -e "\nInstalando ZInit\n"
+# echo -e "\nInstalando ZInit\n"
 
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+# bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
-echo -e "\nConfigurando ZInit\n"
+# echo -e "\nConfigurando ZInit\n"
 
-echo 'zinit light zdharma/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-completions
-' >> ~/.zshrc
+# echo 'zinit light zdharma/fast-syntax-highlighting
+# zinit light zsh-users/zsh-autosuggestions
+# zinit light zsh-users/zsh-completions
+# ' >> ~/.zshrc
 
 
 # git config --global user.email "willianpacheco31@gmail.com"
