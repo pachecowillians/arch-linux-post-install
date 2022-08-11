@@ -44,69 +44,82 @@
 
 
 
+clear
+
+echo -e "\nPacote de ícones Papirus\n"
+
+echo -e "\nClonando repositório\n"
+
+git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+
+cd papirus-icon-theme
+
+echo -e "\nSalvando arquivos no diretório /icons/\n"
+
+sudo rm -r $HOME/.local/share/icons/
+
+mkdir $HOME/.local/share/icons/
+
+mv *Papirus* $HOME/.local/share/icons/
+
+ls $HOME/.local/share/icons/
+
+cd ../
+
+sudo rm -r papirus-icon-theme
+
+echo -e "\nAlterando ícones do sistema\n"
+
+xfconf-query -c xsettings -p /Net/IconThemeName -s "Papirus"
+
+
+
+
+
 # clear
 
-# echo -e "\nPacote de ícones Papirus\n"
+# echo -e "\nTema Orchis\n"
 
-# echo -e "\nClonando repositório\n"
+# sudo rm -r Orchis-theme
 
-# git clone https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+# git clone https://github.com/vinceliuice/Orchis-theme.git
 
-# cd papirus-icon-theme
+# clear
 
-# echo -e "\nSalvando arquivos no diretório /icons/\n"
+# echo -e "\nInstalando Git\n"
 
-# sudo rm -r $HOME/.local/share/icons/
+# sudo pacman -S tar --noconfirm
 
-# mkdir $HOME/.local/share/icons/
+# clear
 
-# mv *Papirus* $HOME/.local/share/icons/
+# echo -e "\nSalvando arquivos no diretório /themes/\n"
 
-# ls $HOME/.local/share/icons/
+# ls
 
-# cd ../
+# cd Orchis-theme/release/
 
-# sudo rm -r papirus-icon-theme
+# sudo rm -r $HOME/.local/share/themes/
+
+# mkdir $HOME/.local/share/themes/
+
+# tar -xf Orchis.tar.xz -C $HOME/.local/share/themes/
+
+# ls $HOME/.local/share/themes/
+
+# cd ../../
+
+# sudo rm -r Orchis-theme
+
+# echo -e "\nAlterando tema do sistema\n"
+
+# xfconf-query -c xsettings -p /Net/ThemeName -s "Orchis-Dark"
 
 
 
 
 
-clear
 
-echo -e "\nTema Orchis\n"
 
-sudo rm -r Orchis-theme
-
-git clone https://github.com/vinceliuice/Orchis-theme.git
-
-clear
-
-echo -e "\nInstalando Git\n"
-
-sudo pacman -S tar --noconfirm
-
-clear
-
-echo -e "\nSalvando arquivos no diretório /themes/\n"
-
-ls
-
-cd Orchis-theme/release/
-
-sudo rm -r $HOME/.local/share/themes/
-
-mkdir $HOME/.local/share/themes/
-
-tar -xf Orchis.tar.xz -C $HOME/.local/share/themes/
-
-ls $HOME/.local/share/themes/
-
-cd ../../
-
-sudo rm -r Orchis-theme
-
-xfconf-query -c xsettings -p /Net/ThemeName -s "Orchis-Dark"
 
 
 # clear
