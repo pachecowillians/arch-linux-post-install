@@ -1,25 +1,25 @@
 # !/bin/bash
 
-clear
+# clear
 
-echo -e "\nInstalando e connfigurando o reflector\n"
+# echo -e "\nInstalando e connfigurando o reflector\n"
 
-echo -e "\nSincronizando pacotes\n"
+# echo -e "\nSincronizando pacotes\n"
 
-sudo pacman -Sy
+# sudo pacman -Sy
 
-echo -e "\nInstalando reflector\n"
+# echo -e "\nInstalando reflector\n"
 
-sudo pacman -S reflector rsync curl --noconfirm
+# sudo pacman -S reflector rsync curl --noconfirm
 
-FILE=/etc/pacman.d/mirrorlist.bak
+# FILE=/etc/pacman.d/mirrorlist.bak
 
-if ! [[ -f "$FILE" ]]; then
-    echo -e "\nCriando backup do mirrorlist para $FILE\n"
-    sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-fi
+# if ! [[ -f "$FILE" ]]; then
+#     echo -e "\nCriando backup do mirrorlist para $FILE\n"
+#     sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+# fi
 
-sudo reflector --download-timeout 5 --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector --download-timeout 5 --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 
 
@@ -140,11 +140,11 @@ sudo reflector --download-timeout 5 --latest 20 --protocol https --sort rate --s
 
 
 
-# clear
+clear
 
-# echo -e "\nInstalando pacotes utilizados\n"
+echo -e "\nInstalando pacotes utilizados\n"
 
-# sudo pacman -S discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
+sudo pacman -S discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
 
 
 
