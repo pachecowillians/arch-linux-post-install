@@ -143,12 +143,11 @@
 
 # clear
 
-# echo -e "\nInstalando Steam\n"
+echo -e "\nInstalando Steam\n"
 
-# echo -e "\nEditando /etc/pacman.conf\n"
+echo -e "\nEditando /etc/pacman.conf\n"
 
-# sudo sed -i 's/#\[multilib\]/[multilib]/g' /etc/pacman.conf
-# sudo sed -i 's/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/g' /etc/pacman.conf
+sed -z 's/#\[multilib\]\n#Include = \/etc\/pacman.d\/mirrorlist/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/' /etc/pacman.conf >tmp.$$.txt && sudo mv tmp.$$.txt /etc/pacman.conf 
 
 # echo -e "\nAtualizando lista de pacotes\n"
 
@@ -215,20 +214,20 @@
 # zinit light zsh-users/zsh-completions
 # ' >> ~/.zshrc
 
-FILE=$HOME/.config/Code/User/settings.json
+# FILE=$HOME/.config/Code/User/settings.json
 
-if ! [[ -f "$FILE" ]]; then
-    echo -e "\nCriando settings.json em $FILE\n"
-    echo '{
-  "git.enableSmartCommit": true,
-  "git.confirmSync": false
-}' >>$FILE
-fi
+# if ! [[ -f "$FILE" ]]; then
+#     echo -e "\nCriando settings.json em $FILE\n"
+#     echo '{
+#   "git.enableSmartCommit": true,
+#   "git.confirmSync": false
+# }' >>$FILE
+# fi
 
-echo -e "\nDefinindo a fonte do terminal integrado do VS Code\n"
+# echo -e "\nDefinindo a fonte do terminal integrado do VS Code\n"
 
-jq '. + { "terminal.integrated.fontFamily": "Fira Code Retina" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
+# jq '. + { "terminal.integrated.fontFamily": "Fira Code Retina" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
 
-echo -e "\nDefinindo o zsh como shell padrão do terminal integrado do VS Code\n"
+# echo -e "\nDefinindo o zsh como shell padrão do terminal integrado do VS Code\n"
 
-jq '. + { "#terminal.integrated.shell.linux": "/bin/zsh" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
+# jq '. + { "#terminal.integrated.shell.linux": "/bin/zsh" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
