@@ -45,7 +45,12 @@
 
 # echo -e "\nSalvando arquivos no diretório /icons/\n"
 
-# sudo rm -r $HOME/.local/share/icons/
+# FILE=$HOME/.local/share/icons/
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # mkdir $HOME/.local/share/icons/
 
@@ -55,7 +60,12 @@
 
 # cd ../
 
-# sudo rm -r papirus-icon-theme
+# FILE=papirus-icon-theme
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # echo -e "\nAlterando ícones do sistema\n"
 
@@ -65,7 +75,12 @@
 
 # echo -e "\nTema Orchis\n"
 
-# sudo rm -r Orchis-theme
+# FILE=Orchis-theme
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # git clone https://github.com/vinceliuice/Orchis-theme.git
 
@@ -83,7 +98,12 @@
 
 # cd Orchis-theme/release/
 
-# sudo rm -r $HOME/.local/share/themes/
+# FILE=$HOME/.local/share/themes/
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # mkdir $HOME/.local/share/themes/
 
@@ -93,7 +113,12 @@
 
 # cd ../../
 
-# sudo rm -r Orchis-theme
+# FILE=Orchis-theme
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # echo -e "\nAlterando tema do sistema\n"
 
@@ -107,7 +132,12 @@
 
 # sudo pacman -S go base-devel --noconfirm
 
-# sudo rm -r yay
+# FILE=yay
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # echo -e "\nClonando repositório\n"
 
@@ -121,7 +151,12 @@
 
 # cd ../
 
-# sudo rm -r yay
+# FILE=yay
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # echo -e "\nRemovendo Go\n"
 
@@ -131,7 +166,7 @@
 
 # echo -e "\nInstalando pacotes utilizados\n"
 
-sudo pacman -S blender discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jq jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
+# sudo pacman -S blender discord docker docker-compose firefox gamemode gcc gcc-fortran gimp git gnu-free-fonts gpick gsfonts gvfs gvfs-afc gvfs-gphoto2 gvfs-mtp gzip inkscape jq jre-openjdk libreoffice-still make nano neofetch noto-fonts npm obs-studio opendesktop-fonts pavucontrol pulseaudio pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer python-pip spotify-launcher telegram-desktop ttf-anonymous-pro ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-caladea ttf-carlito ttf-cascadia-code ttf-cormorant ttf-croscore ttf-dejavu ttf-droid ttf-eurof ttf-fantasque-sans-mono ttf-fira-code ttf-fira-mono ttf-fira-sans ttf-font-awesome ttf-hack ttf-hanazono ttf-hannom ttf-ibm-plex ttf-inconsolata ttf-indic-otf ttf-input ttf-ionicons ttf-iosevka-nerd ttf-jetbrains-mono ttf-joypixels ttf-junicode ttf-khmer ttf-lato ttf-liberation ttf-linux-libertine ttf-linux-libertine-g ttf-monofur ttf-monoid ttf-nerd-fonts-symbols ttf-opensans ttf-proggy-clean ttf-roboto ttf-roboto-mono ttf-sarasa-gothic ttf-sazanami ttf-tibetan-machine ttf-ubuntu-font-family inter-font unrar unzip virt-manager vi vim virtualbox vlc wget xfce4-screenshooter yarn zip zsh --noconfirm
 
 # clear
 
@@ -147,7 +182,7 @@ sudo pacman -S blender discord docker docker-compose firefox gamemode gcc gcc-fo
 
 # echo -e "\nEditando /etc/pacman.conf\n"
 
-# sed -z 's/#\[multilib\]\n#Include = \/etc\/pacman.d\/mirrorlist/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/' /etc/pacman.conf >tmp.$$.txt && sudo mv tmp.$$.txt /etc/pacman.conf 
+# sed -z 's/#\[multilib\]\n#Include = \/etc\/pacman.d\/mirrorlist/\[multilib\]\nInclude = \/etc\/pacman.d\/mirrorlist/' /etc/pacman.conf >tmp.$$.txt && sudo mv tmp.$$.txt /etc/pacman.conf
 
 # echo -e "\nAtualizando lista de pacotes\n"
 
@@ -167,13 +202,23 @@ sudo pacman -S blender discord docker docker-compose firefox gamemode gcc gcc-fo
 
 # echo -e "\nInstalando tema Spaceship\n"
 
-# sudo rm -r $ZSH_CUSTOM/themes/spaceship-prompt
+# FILE=$ZSH_CUSTOM/themes/spaceship-prompt
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
 # echo -e "\nCriando link simbólico para pasta do Spaceship\n"
 
-# sudo rm -r $ZSH_CUSTOM/themes/spaceship.zsh-theme
+# FILE=$ZSH_CUSTOM/themes/spaceship.zsh-theme
+
+# if [[ -d "$FILE" ]]; then
+#     echo -e "\nRemovendo $FILE existente\n"
+#     sudo rm -r $FILE
+# fi
 
 # sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
