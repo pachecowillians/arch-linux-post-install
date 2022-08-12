@@ -212,7 +212,7 @@ sudo pacman -Sy
 
 echo -e "\nInstalando Steam\n"
 
-sudo pacman -S steam --noconfirm
+sudo pacman -S steam
 
 # INSTALAÇÃO DO ZSH
 
@@ -232,23 +232,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 echo -e "\nInstalando tema Spaceship\n"
 
-FILE=$ZSH_CUSTOM/themes/spaceship-prompt
-
-if [[ -d "$FILE" ]]; then
-    echo -e "\nRemovendo $FILE existente\n"
-    sudo rm -r $FILE
-fi
-
-sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-
 echo -e "\nCriando link simbólico para pasta do Spaceship\n"
 
-FILE=$ZSH_CUSTOM/themes/spaceship.zsh-theme
-
-if [[ -d "$FILE" ]]; then
-    echo -e "\nRemovendo $FILE existente\n"
-    sudo rm -r $FILE
-fi
+sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
 sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
