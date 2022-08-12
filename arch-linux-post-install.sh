@@ -277,6 +277,8 @@
 
 # jq '. + { "#terminal.integrated.shell.linux": "/bin/zsh" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
 
+# clear
+
 # echo -e "\nHabilitando tela de bloqueio\n"
 
 # xfconf-query -c xfce4-session -p /general/LockCommand -s "xlock" --create -t string
@@ -284,3 +286,9 @@
 # xfconf-query -c xfce4-session -p /general/LockCommand -s "xlock"
 
 # xfce4-screensaver &
+
+clear
+
+echo -e "\nInstalando extensões do vscode\n"
+
+cat vscode-extensions.list | xargs -L 1 code --install-extension
