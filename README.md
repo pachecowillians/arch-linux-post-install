@@ -25,3 +25,10 @@ Then, just run the script:
 ```sh
 ./arch-linux-post-install.sh
 ```
+
+This script setup a lot of apps, but requires some manual configuration. The manual setup is:
+
+- Set Inter font in Apearence app
+- Define keyboard shortcuts
+- Setup vscode Dracula theme
+- Setup vscode Material Icon pack
