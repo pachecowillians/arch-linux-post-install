@@ -26,9 +26,9 @@ Then, just run the script:
 ./arch-linux-post-install.sh
 ```
 
-This script setup a lot of apps, but requires some manual configuration. The manual setup is:
+This script configures many applications, but requires some manual configuration. Manual configuration is:
 
-- Set Inter font in Apearence app
-- Define keyboard shortcuts
-- Setup vscode Dracula theme
-- Setup vscode Material Icon pack
+- Set Inter font in Appearance app
+- Set keyboard shortcuts
+- Dracula vscode theme configuration
+- Setup vscode material icon pack
