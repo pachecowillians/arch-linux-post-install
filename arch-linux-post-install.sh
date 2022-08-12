@@ -338,3 +338,13 @@ clear
 echo -e "\nInstalando extensões do vscode\n"
 
 cat vscode-extensions.list | xargs -L 1 code --install-extension
+
+echo -e "\nInstalando paccache\n"
+
+sudo pacman -S pacman-contrib --noconfirm
+
+echo -e "\nLimpando cache\n"
+
+sudo pacman -Sc --noconfirm
+
+paccache -r
