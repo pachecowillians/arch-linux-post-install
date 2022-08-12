@@ -325,12 +325,23 @@ echo -e "\nInstalando extensões do vscode\n"
 
 cat vscode-extensions.list | xargs -L 1 code --install-extension
 
+# INSTALAÇÃO DO PACCACHE
+
 echo -e "\nInstalando paccache\n"
 
 sudo pacman -S pacman-contrib --noconfirm
+
+# LIMPEZA DO CACHE
 
 echo -e "\nLimpando cache\n"
 
 sudo pacman -Sc --noconfirm
 
 paccache -r
+
+# CONFIGURAÇÃO DA IDENTIDADE PADRÃO
+
+echo -e "\nConfigurando identidade padrão do git\n"
+
+git config --global user.email "willianpacheco31@gmail.com"
+git config --global user.name "Willian Pacheco Silva"
