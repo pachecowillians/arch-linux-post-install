@@ -21,6 +21,10 @@ if ! [[ -f "$FILE" ]]; then
     sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 fi
 
+clear
+
+echo -e "\nGerando mirrorlist\n"
+
 sudo reflector --download-timeout 5 --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 # ATUALIZAÇÃO DO SISTEMA
@@ -190,7 +194,7 @@ echo -e "\nInstalando pacotes utilizados com o yay\n"
 
 echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PKGNAME
 
-yay -S google-chrome insomnia-bin beekeeper-studio-bin masterpdfeditor-free notion-app onlyoffice-bin ttf-ms-fonts visual-studio-code-bin microsoft-edge
+yay -S google-chrome insomnia-bin beekeeper-studio-bin masterpdfeditor-free notion-app onlyoffice-bin ttf-ms-fonts visual-studio-code-bin
 
 # INSTALAÇÃO DA STEAM
 
