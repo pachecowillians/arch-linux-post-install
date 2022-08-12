@@ -236,7 +236,7 @@ echo -e "\nCriando link simbólico para pasta do Spaceship\n"
 
 sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
-sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" ~/.oh-my-zsh/themes/spaceship.zsh-theme
 
 # CONFIGURAÇÃO DO SPACESHIP
 
