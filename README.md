@@ -30,6 +30,89 @@ Finally, just use the ```dd``` command to create the bootable flash drive defini
 sudo dd bs=4M if=/path/to/ISOfile of=/dev/sdx status=progress oflag=sync
 ```
 
+### Arch Linux Installation
+
+To install Arch, boot from the USB stick created in the previous section and wait until a terminal appears.
+
+If the installation is done in a virtual machine, there is no need to connect to the internet, as the virtual machine receives the configured internet from the host machine. On the other hand, if the installation is on the HD, it is necessary to configure the network card before starting the installation. 
+
+#### WiFI setup
+
+In case of using the wireless interface, first use the following command to get the name of the wireless interface:
+
+```sh
+iw dev
+```
+
+Usually the name of the wireless interface is *wlan0*.
+
+Once the wireless network interface is defined, in all the following commands, replace *interface* with wlan0 or the name of the WiFi interface used.
+
+After identifying the name of the interface, check the status of the links with the command below:
+
+```sh
+iw dev interface link
+```
+
+Then, the following commands are used to activate the network interface and verify that its status is active.
+
+```sh
+ip link set interface up
+ip link show interface
+```
+
+After activating the network interface, iwctl is started to connect to some network.
+
+```sh
+iwctl
+```
+
+To know the name of the wireless device, use the following command:
+
+```sh
+device list
+```
+
+After identifying the device name, in the commands below, replace the name *device* with the device name obtained above.
+
+To scan the available networks, use the command below:
+
+```sh
+station device scan
+```
+
+To list the available networks, use the command below:
+
+```sh
+station device get-networks
+```
+
+In the list generated above, you must identify the *SSID* of the network you want to connect to and connect to it using the command below:
+
+```sh
+station device connect SSID
+```
+
+In the above command, replace SSID for the SSID obtained in the previous listing.
+
+After connecting to the network, simply run the command ```exit``` to exit the *iwctl* environment and check the network using the command below:
+
+```sh
+ping 8.8.8.8
+```
+
+#### Installation
+
+With the internet working, to start the installation, just run the following command to start the Arch Linux installer:
+
+```sh
+archinstall
+```
+
+The installer will have a series of menus to configure the system language, keyboard language, time zone, disk partitioning, and many other options. In this case, the XFCE graphical environment will be used. So, in the profile section, select the *desktop* option and choose to install xfce so that the script works fully.
+
+After configuring the installation, just select the *Install* option and start the Arch installation.
+
 ## Post Install
 
 To run the script, clone the repository with ```git clone``` :
