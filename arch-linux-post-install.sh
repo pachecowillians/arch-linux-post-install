@@ -317,7 +317,7 @@ echo -e "\nDefinição do zsh como shell padrão do terminal integrado do VS Cod
 
 jq '. + { "#terminal.integrated.shell.linux": "/bin/zsh" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
 
-# DEFINIÇÃO DO ZSH COMO SHELL DO VSCODE
+# DEFINIÇÃO DAS LINGUAGENS DO CSPELL
 
 echo -e "\nDefinição das linguagens do cspell como português (br) e inglês\n"
 
@@ -334,8 +334,6 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "xlock" --create -t str
 xfconf-query -c xfce4-session -p /general/LockCommand -s "xlock"
 
 xfce4-screensaver &
-
-# INSTALAÇÃO DO PACCACHE
 
 # INSTALAÇÃO DO PACCACHE
 
