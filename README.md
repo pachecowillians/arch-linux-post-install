@@ -157,6 +157,6 @@ sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
 
 If you use VirtualBox to run virtual machines, when creating new machines from existing images, it is necessary to reconfigure the images to make them compatible with the current configuration of the operating system. To do this, run the command below:
 
-```console
+```sh
 sudo /sbin/rcvboxdrv setup
 ```
