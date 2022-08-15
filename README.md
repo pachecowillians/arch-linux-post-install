@@ -28,7 +28,11 @@ Then, just run the script:
 
 This script configures many applications, but requires some manual configuration. Manual configuration is:
 
-- Set Inter font in Appearance app
+- Apply Orchis Theme in window settings
+- Apply Inter Font in windows title
+- Apply Dracula Theme in vscode
+- Apply Material Icon Icon Theme in vscode
 - Set keyboard shortcuts
-- Dracula vscode theme configuration
-- Setup vscode material icon pack
+- Set Inter font in Appearance app
+- Configure the panel
+
