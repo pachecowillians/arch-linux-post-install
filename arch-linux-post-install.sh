@@ -297,11 +297,19 @@ zinit light zsh-users/zsh-completions
 
 clear
 
-# DEFINIÇÃO DA FONTE DO TERMINAL INTEGRADO DO VSCODE
+# INSTALAÇÃO DAS EXTENSÕES DO VSCODE
+
+clear
+
+echo -e "\nInstalando extensões do vscode\n"
+
+cat vscode-extensions.list | xargs -L 1 code --install-extension
+
+# CREATING VSCODE SETTINGS.JSON IF NOT EXISTS
+
+echo -e "\nCriando o settings.json do vscode caso não exista\n"
 
 FILE=$HOME/.config/Code/User/settings.json
-
-echo -e "\nDefinindo a fonte do terminal integrado do VS Code\n"
 
 if ! [[ -f "$FILE" ]]; then
     echo -e "\nCriando settings.json em $FILE\n"
@@ -311,13 +319,23 @@ if ! [[ -f "$FILE" ]]; then
 }' >>$FILE
 fi
 
+# DEFINIÇÃO DA FONTE DO TERMINAL INTEGRADO DO VSCODE
+
+echo -e "\nDefinindo a fonte do terminal integrado do VS Code\n"
+
 jq '. + { "terminal.integrated.fontFamily": "Fira Code Retina" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
 
-# DEFININDO ZSH COMO SHELL DO VSCODE
+# DEFINIÇÃO DO ZSH COMO SHELL DO VSCODE
 
-echo -e "\nDefinindo o zsh como shell padrão do terminal integrado do VS Code\n"
+echo -e "\nDefinição do zsh como shell padrão do terminal integrado do VS Code\n"
 
 jq '. + { "#terminal.integrated.shell.linux": "/bin/zsh" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
+
+# DEFINIÇÃO DO ZSH COMO SHELL DO VSCODE
+
+echo -e "\nDefinição das linguagens do cspell como português (br) e inglês\n"
+
+jq '. + { "cSpell.language": "en,pt-BR" }' $HOME/.config/Code/User/settings.json >tmp.$$.json && mv tmp.$$.json $HOME/.config/Code/User/settings.json
 
 # HABILITAÇÃO DA TELA DE BLOQUEIO
 
@@ -331,17 +349,13 @@ xfconf-query -c xfce4-session -p /general/LockCommand -s "xlock"
 
 xfce4-screensaver &
 
-# INSTALAÇÃO DAS EXTENSÕES DO VSCODE
-
-clear
-
-echo -e "\nInstalando extensões do vscode\n"
-
-cat vscode-extensions.list | xargs -L 1 code --install-extension
+# INSTALAÇÃO DO PACCACHE
 
 echo -e "\nInstalando paccache\n"
 
 sudo pacman -S pacman-contrib --noconfirm
+
+# LIMPEZA DO CACHE
 
 echo -e "\nLimpando cache\n"
 
