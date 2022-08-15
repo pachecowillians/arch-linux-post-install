@@ -149,3 +149,8 @@ This script configures many applications, but requires some manual configuration
 - Set Inter font in Appearance app
 - Configure the panel
 
+After performing the installation, in most cases, it is necessary to copy the personal files from an external HD to the HD where Arch was installed. When this copy is done as a superuser, it is necessary to set the local user as the owner of the files and ensure that he has permissions on the files. To do this, run the command below:
+
+```sh
+sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
+```
