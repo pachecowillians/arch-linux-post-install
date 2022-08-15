@@ -212,7 +212,7 @@ sudo pacman -Sy
 
 echo -e "\nInstalando Steam\n"
 
-sudo pacman -S steam --noconfirm
+sudo pacman -S steam
 
 # INSTALAÇÃO DO ZSH
 
@@ -232,25 +232,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 echo -e "\nInstalando tema Spaceship\n"
 
-FILE=$ZSH_CUSTOM/themes/spaceship-prompt
-
-if [[ -d "$FILE" ]]; then
-    echo -e "\nRemovendo $FILE existente\n"
-    sudo rm -r $FILE
-fi
+echo -e "\nCriando link simbólico para pasta do Spaceship\n"
 
 sudo git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
-echo -e "\nCriando link simbólico para pasta do Spaceship\n"
-
-FILE=$ZSH_CUSTOM/themes/spaceship.zsh-theme
-
-if [[ -d "$FILE" ]]; then
-    echo -e "\nRemovendo $FILE existente\n"
-    sudo rm -r $FILE
-fi
-
-sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" ~/.oh-my-zsh/themes/spaceship.zsh-theme
 
 # CONFIGURAÇÃO DO SPACESHIP
 
@@ -351,6 +337,8 @@ xfce4-screensaver &
 
 # INSTALAÇÃO DO PACCACHE
 
+# INSTALAÇÃO DO PACCACHE
+
 echo -e "\nInstalando paccache\n"
 
 sudo pacman -S pacman-contrib --noconfirm
@@ -362,3 +350,10 @@ echo -e "\nLimpando cache\n"
 sudo pacman -Sc --noconfirm
 
 paccache -r
+
+# CONFIGURAÇÃO DA IDENTIDADE PADRÃO
+
+echo -e "\nConfigurando identidade padrão do git\n"
+
+git config --global user.email "willianpacheco31@gmail.com"
+git config --global user.name "Willian Pacheco Silva"
