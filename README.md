@@ -154,3 +154,9 @@ After performing the installation, in most cases, it is necessary to copy the pe
 ```sh
 sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
 ```
+
+If you use VirtualBox to run virtual machines, when creating new machines from existing images, it is necessary to reconfigure the images to make them compatible with the current configuration of the operating system. To do this, run the command below:
+
+```console
+sudo /sbin/rcvboxdrv setup
+```
