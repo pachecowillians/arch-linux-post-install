@@ -194,7 +194,7 @@ echo -e "\nInstalando pacotes utilizados com o yay\n"
 
 echo y | LANG=C yay --noprovides --answerdiff None --answerclean None --mflags "--noconfirm" $PKGNAME
 
-yay -S google-chrome insomnia-bin beekeeper-studio-bin masterpdfeditor-free notion-app onlyoffice-bin ttf-ms-fonts visual-studio-code-bin
+yay -S google-chrome insomnia-bin beekeeper-studio-bin masterpdfeditor-free notion-app onlyoffice-bin ttf-ms-fonts youtube-music-bin visual-studio-code-bin
 
 # INSTALAÇÃO DA STEAM
 
