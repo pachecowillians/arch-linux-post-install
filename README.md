@@ -95,7 +95,12 @@ station device connect SSID
 
 In the above command, replace SSID for the SSID obtained in the previous listing.
 
-After connecting to the network, simply run the command ```exit``` to exit the *iwctl* environment and check the network using the command below:
+After connecting to the network, simply run the following command to exit the *iwctl* environment:
+
+```sh
+exit
+```
+Then check the network using the command below:
 
 ```sh
 ping 8.8.8.8
