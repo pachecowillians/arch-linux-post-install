@@ -109,7 +109,7 @@ With the internet working, to start the installation, just run the following com
 archinstall
 ```
 
-The installer will have a series of menus to configure the system language, keyboard language, time zone, disk partitioning, and many other options. In this case, the XFCE graphical environment will be used. So, in the profile section, select the *desktop* option and choose to install xfce so that the script works fully.
+The installer will have a series of menus to configure the system language, keyboard language, time zone, disk partitioning, and many other options. In this case, the XFCE graphical environment will be used. So, in the profile section, select the *desktop* option and choose to install xfce so that the script works fully. Also, when selecting the language, remember to select the option that **does not contain UTF-8 encoding**, as it causes problems with accentuation in some programs such as Telegram Desktop.
 
 After configuring the installation, just select the *Install* option and start the Arch installation.
 
@@ -143,10 +143,10 @@ This script configures many applications, but requires some manual configuration
 
 - Apply Orchis Theme in window settings
 - Apply Inter Font in windows title
+- Set Inter font in Appearance app
 - Apply Dracula Theme in vscode
 - Apply Material Icon Icon Theme in vscode
 - Set keyboard shortcuts
-- Set Inter font in Appearance app
 - Configure the panel
 
 After performing the installation, in most cases, it is necessary to copy the personal files from an external HD to the HD where Arch was installed. When this copy is done as a superuser, it is necessary to set the local user as the owner of the files and ensure that he has permissions on the files. To do this, run the command below:
@@ -154,6 +154,8 @@ After performing the installation, in most cases, it is necessary to copy the pe
 ```sh
 sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
 ```
+
+The above command can also be used to allow the file system to have edit access to data from an external HD if an SSD is used for the operating system and a HD for the files.
 
 If you use VirtualBox to run virtual machines, when creating new machines from existing images, it is necessary to reconfigure the images to make them compatible with the current configuration of the operating system. To do this, run the command below:
 
