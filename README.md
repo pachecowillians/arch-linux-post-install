@@ -144,6 +144,8 @@ Then, just run the script:
 ./arch-linux-post-install.sh
 ```
 
+### Manual setup
+
 This script configures many applications, but requires some manual configuration. Manual configuration is:
 
 - Apply Orchis Theme in window settings
@@ -154,6 +156,8 @@ This script configures many applications, but requires some manual configuration
 - Set keyboard shortcuts
 - Configure the panel
 
+### Handling HD permissions
+
 After performing the installation, in most cases, it is necessary to copy the personal files from an external HD to the HD where Arch was installed. When this copy is done as a superuser, it is necessary to set the local user as the owner of the files and ensure that he has permissions on the files. To do this, run the command below:
 
 ```sh
@@ -162,11 +166,15 @@ sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
 
 The above command can also be used to allow the file system to have edit access to data from an external HD if an SSD is used for the operating system and a HD for the files.
 
+### Configuring VirtualBox
+
 If you use VirtualBox to run virtual machines, when creating new machines from existing images, it is necessary to reconfigure the images to make them compatible with the current configuration of the operating system. To do this, run the command below:
 
 ```sh
 sudo /sbin/rcvboxdrv setup
 ```
+
+### Installing an HTTP server
 
 If you want to install a simple http server, just run the following command:
 
