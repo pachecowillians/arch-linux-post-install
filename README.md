@@ -167,3 +167,9 @@ If you use VirtualBox to run virtual machines, when creating new machines from e
 ```sh
 sudo /sbin/rcvboxdrv setup
 ```
+
+If you want to install a simple http server, just run the following command:
+
+```sh
+sudo npm -g install http-server
+```
