@@ -181,3 +181,11 @@ If you want to install a simple http server, just run the following command:
 ```sh
 sudo npm -g install http-server
 ```
+
+### Binding broken keyboard key
+
+If you have a broken key in your keyboard, you can just assign the command relative to the broken key to another functional key. In my case, the broken key is the letter "m". Then, knowing that the code 135 is relative to Menu key, i can use the following command to bind the letter "m" to Menu key:
+
+```sh
+echo "keycode 135 = m M m M mu mu mu" >> ~/.Xmodmap
+```
