@@ -1,30 +1,30 @@
 # Arch Linux Post-Install
 
-This project is a shell script created to setup the Arch Linux, install themes, icon pack and apps after installing the Operating System.
+This project is a shell script created to set up Arch Linux, install themes, icon packs, and apps after installing the operating system.
 
 ## Arch Install
 
-Initially, i installed Arch Linux using the archinstall installation script provided in the official Arch installation image. This image can be found on the distribution's official website https://archlinux.org/download/.
+To begin with, I installed Arch Linux using the `archinstall` installation script provided in the official Arch installation image. You can find this image on the distribution's official website at https://archlinux.org/download/.
 
-### Bootable USB stick
+### Bootable USB Stick
 
-After download the ISO, just create a bootable USB stick to install it on the machine. This is not necessary when you want to install Arch Linux on a virtual machine. In this case, you just need to import the image as a virtual disk.
+After downloading the ISO, create a bootable USB stick to install Arch Linux on your machine. This step is not necessary if you are installing Arch Linux on a virtual machine. In that case, you can simply import the image as a virtual disk.
 
-To create the bootable pendrive, use ```fdisk``` as shown below, in order to list all devices and identify the pendrive that will receive the image.
+To create the bootable USB stick, use `fdisk` to list all devices and identify the USB stick that will receive the image:
 
 ```sh
 sudo fdisk -l
 ```
 
-Generally, the USB stick's mount point is located in a directory like */dev/sdx*, where *x* represents some letter of the alphabet.
+Generally, the USB stick's mount point is located in a directory like `/dev/sdx`, where `x` represents a letter of the alphabet.
 
-With the directory defined, the device is unmounted with the command ```umount```
+Once you have identified the directory, unmount the device using the `umount` command:
 
 ```sh
 sudo umount /dev/sdx
 ```
 
-Finally, just use the ```dd``` command to create the bootable flash drive defining the path to the downloaded iso and the flash drive mount point, as shown below.
+Finally, use the `dd` command to create the bootable flash drive by specifying the path to the downloaded ISO file and the mount point of the flash drive:
 
 ```sh
 sudo dd bs=4M if=/path/to/ISOfile of=/dev/sdx status=progress oflag=sync
@@ -34,34 +34,34 @@ sudo dd bs=4M if=/path/to/ISOfile of=/dev/sdx status=progress oflag=sync
 
 To install Arch, boot from the USB stick created in the previous section and wait until a terminal appears.
 
-If the installation is done in a virtual machine, there is no need to connect to the internet, as the virtual machine receives the configured internet from the host machine. On the other hand, if the installation is on the HD, it is necessary to configure the network card before starting the installation. 
+If you are installing in a virtual machine, there is no need to connect to the internet as the virtual machine receives internet configuration from the host machine. However, if you are installing on a physical machine, you need to configure the network card before starting the installation.
 
-#### WiFI setup
+#### Wi-Fi Setup
 
-In case of using the wireless interface, first use the following command to get the name of the wireless interface:
+If you are using a wireless interface, first use the following command to get the name of the wireless interface:
 
 ```sh
 iw dev
 ```
 
-Usually the name of the wireless interface is *wlan0*.
+Usually, the name of the wireless interface is `wlan0`.
 
-Once the wireless network interface is defined, in all the following commands, replace *interface* with wlan0 or the name of the WiFi interface used.
+After identifying the wireless network interface, replace `interface` with `wlan0` or the name of the wireless interface you are using in the following commands.
 
-After identifying the name of the interface, check the status of the links with the command below:
+Check the status of the links using the command below:
 
 ```sh
 iw dev interface link
 ```
 
-Then, the following commands are used to activate the network interface and verify that its status is active.
+Then, use the following commands to activate the network interface and verify that its status is active:
 
 ```sh
 ip link set interface up
 ip link show interface
 ```
 
-After activating the network interface, iwctl is started to connect to some network.
+Once the network interface is activated, start `iwctl` to connect to a network:
 
 ```sh
 iwctl
@@ -73,9 +73,9 @@ To know the name of the wireless device, use the following command:
 device list
 ```
 
-After identifying the device name, in the commands below, replace the name *device* with the device name obtained above.
+Replace `device` with the device name obtained from the command above in the following commands.
 
-To scan the available networks, use the command below:
+To scan for available networks, use the command below:
 
 ```sh
 station device scan
@@ -87,20 +87,21 @@ To list the available networks, use the command below:
 station device get-networks
 ```
 
-In the list generated above, you must identify the *SSID* of the network you want to connect to and connect to it using the command below:
+From the generated list, identify the SSID of the network you want to connect to and use the following command to connect to it:
 
 ```sh
 station device connect SSID
 ```
 
-In the above command, replace SSID for the SSID obtained in the previous listing.
+Replace `SSID` with the SSID obtained from the previous listing.
 
-After connecting to the network, simply run the following command to exit the *iwctl* environment:
+After connecting to the network, exit the `iwctl` environment by running the following command:
 
 ```sh
 exit
 ```
-Then check the network using the command below:
+
+Then, check the network connection using the command below:
 
 ```sh
 ping 8.8.8.8
@@ -108,84 +109,100 @@ ping 8.8.8.8
 
 #### Installation
 
-With the internet working, to start the installation, just run the following command to start the Arch Linux installer:
+With the internet connection established, start the Arch Linux installer by running the following command:
 
 ```sh
 archinstall
 ```
 
-The installer will have a series of menus to configure the system language, keyboard language, time zone, disk partitioning, and many other options. In this case, the XFCE graphical environment will be used. So, in the profile section, select the *desktop* option and choose to install xfce so that the script works fully. Also, when selecting the language, remember to select the option that **does not contain UTF-8 encoding**, as it causes problems with accentuation in some programs such as Telegram Desktop.
+The installer will guide you through configuring the system
 
-After configuring the installation, just select the *Install* option and start the Arch installation.
+ language, keyboard layout, time zone, disk partitioning, and other options. Select the `desktop` option in the profile section to install XFCE, which is required for the script to work properly. Also, when selecting the language, choose the option that **does not include UTF-8 encoding** as it may cause issues with accentuation in some programs like Telegram Desktop.
+
+After configuring the installation, select the `Install` option to start the Arch installation.
 
 ## Post Install
 
-To run the script, clone the repository with ```git clone``` :
+To run the script, clone the repository using `git clone`:
 
 ```sh
 git clone https://github.com/pachecowillians/arch-linux-post-install.git
 ```
 
-After cloning the repository, enter in the project folder using ```cd``` :
+Navigate to the project folder using `cd`:
 
 ```sh
 cd arch-linux-post-install
 ```
 
-To run the script, it need to receive executable permission using ```chmod``` :
+Make the script executable by granting it the necessary permissions using `chmod`:
 
 ```sh
 chmod +x arch-linux-post-install.sh
 ```
 
-Then, just run the script:
+Then, run the script:
 
 ```sh
 ./arch-linux-post-install.sh
 ```
 
-### Manual setup
+### Manual Setup
 
-This script configures many applications, but requires some manual configuration. Manual configuration is:
+The script automates the configuration of many applications but requires some manual configuration. Here are the manual configurations you need to perform:
 
-- Apply Orchis Theme in window settings
-- Apply Inter Font in windows title
-- Set Inter font in Appearance app
-- Apply Dracula Theme in vscode
-- Apply Material Icon Icon Theme in vscode
-- Set keyboard shortcuts
-- Configure the panel
+- Apply the Orchis Theme in the window settings.
+- Apply the Inter Font in the windows title.
+- Set the Inter font in the Appearance app.
+- Apply the Dracula Theme in VSCode.
+- Apply the Material Icon Icon Theme in VSCode.
+- Set up keyboard shortcuts.
+- Configure the panel.
 
-### Handling HD permissions
+### Handling HD Permissions
 
-After performing the installation, in most cases, it is necessary to copy the personal files from an external HD to the HD where Arch was installed. When this copy is done as a superuser, it is necessary to set the local user as the owner of the files and ensure that he has permissions on the files. To do this, run the command below:
+After installation, you may need to copy personal files from an external HD to the HD where Arch Linux is installed. When copying files as a superuser, it is necessary to set the local user as the owner of the files and ensure that they have proper permissions. To do this, run the following command:
 
 ```sh
 sudo chown -R $USER:$USER /PATH/TO/COPIED/FOLDER
 ```
 
-The above command can also be used to allow the file system to have edit access to data from an external HD if an SSD is used for the operating system and a HD for the files.
+This command can also be used to grant edit access to data from an external HD if you have an SSD for the operating system and an HD for the files.
 
 ### Configuring VirtualBox
 
-If you use VirtualBox to run virtual machines, when creating new machines from existing images, it is necessary to reconfigure the images to make them compatible with the current configuration of the operating system. To do this, run the command below:
+If you use VirtualBox to run virtual machines and you need to create new machines from existing images, you may need to reconfigure the images to make them compatible with the current operating system configuration. To do this, run the following command:
 
 ```sh
 sudo /sbin/rcvboxdrv setup
 ```
 
-### Installing an HTTP server
+### Installing an HTTP Server
 
-If you want to install a simple http server, just run the following command:
+If you want to install a simple HTTP server, run the following command:
 
 ```sh
 sudo npm -g install http-server
 ```
 
-### Binding broken keyboard key
+Feel free to modify the script and add any additional configurations or applications that suit your needs.
 
-If you have a broken key in your keyboard, you can just assign the command relative to the broken key to another functional key. In my case, the broken key is the letter "m". Then, knowing that the code 135 is relative to Menu key, i can use the following command to bind the letter "m" to Menu key:
+### Binding a Broken Keyboard Key
 
-```sh
-echo "keycode 135 = m M m M mu mu mu" >> ~/.Xmodmap
-```
+If you have a broken key on your keyboard, you can assign the functionality of that key to another functional key. Here's an example of how to bind the letter "m" to the Menu key if the "m" key is broken.
+
+1. Open a terminal and run the following command to bind the "m" key to the Menu key:
+   
+   ```sh
+   echo "keycode 135 = m M m M mu mu mu" >> ~/.Xmodmap
+   ```
+
+   This command appends the keycode mapping to the `~/.Xmodmap` file.
+
+2. After executing the command, the "m" key should be bound to the Menu key. Test it out by pressing the Menu key, and it should input the letter "m" instead.
+
+This allows you to continue using the functionality of a broken key by mapping it to another key on your keyboard.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
