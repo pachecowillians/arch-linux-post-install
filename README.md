@@ -1,8 +1,8 @@
+# Arch Linux Post-Install
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/pachecowillians/svg-icons/24f3ae63c7a048dba837ce12386b4492d1f0b9fb/img/arch-linux.svg" alt="Arch Linux Logo" height="100px">
 </p>
-
-# Arch Linux Post-Install
 
 This project is a shell script created to set up Arch Linux, install themes, icon packs, and apps after installing the operating system.
 
